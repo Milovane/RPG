@@ -1,3 +1,4 @@
+import HeroClasses.Armor;
 import HeroClasses.Hero;
 import HeroClasses.Mage;
 

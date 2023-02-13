@@ -3,11 +3,15 @@ package HeroClasses;
 
 public class Ranger extends Hero {
     WeaponType[] validWeaponType;
+    ArmorType[] validArmorType;
     public Ranger(String name) {
         super(name);
         this.levelAttributes = new HeroAttribute(1, 7, 1);
         validWeaponType = new WeaponType[] {
                 WeaponType.Bows
+        };
+        validArmorType = new ArmorType[] {
+                ArmorType.Leather, ArmorType.Mail
         };
     }
     @Override

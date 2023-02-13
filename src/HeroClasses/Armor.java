@@ -11,6 +11,11 @@ public class Armor extends Item {
 
     @Override
     public boolean ValidEquip(Hero hero) {
-        return false;
+        if (hero.validArmorTypes.contains(armorType) && hero.level >= requiredLevel)
+            return true;
+
+            return false;
+
+
     }
 }

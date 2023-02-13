@@ -34,7 +34,11 @@ public abstract void levelUp();
     }
 
 public void Equip(Item item) {
-        if (item.ValidEquip(this));
+        if (item.ValidEquip(this)) {
+            equipment.put(item.slot, item);
+
+        }
+
 
 }
 
