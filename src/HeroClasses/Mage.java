@@ -1,18 +1,15 @@
 package HeroClasses;
 
 
+import java.util.List;
+
 public class Mage extends Hero {
-    WeaponType[] validWeaponType;
-    ArmorType[] validArmorType;
     public Mage(String name) {
         super(name);
         this.levelAttributes = new HeroAttribute(1, 1, 8);
-        validWeaponType = new WeaponType[] {
-                WeaponType.Staffs, WeaponType.Wands
-        };
-        validArmorType = new ArmorType[] {
-                ArmorType.Cloth
-        };
+        validWeaponTypes.add(WeaponType.Staffs);
+        validWeaponTypes.add(WeaponType.Wands);
+        validArmorTypes.add(ArmorType.Cloth);
 
     }
     @Override

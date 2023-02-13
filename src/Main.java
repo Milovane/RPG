@@ -1,13 +1,14 @@
-import HeroClasses.Armor;
-import HeroClasses.Hero;
-import HeroClasses.Mage;
+import HeroClasses.*;
 
 public class Main {
     public static void main(String[] args) {
-       Hero Yasir = new Mage("Yasir") ;
+       var Yasir = new Mage("Yasir") ;
         System.out.println(Yasir);
         Yasir.levelUp();
         System.out.println(Yasir);
+        var armor = new Armor( "Yes Cap",2, Slot.Head, ArmorType.Cloth, new HeroAttribute(3, 4, 5) );
+
+        Yasir.Equip(armor);
 
 
 

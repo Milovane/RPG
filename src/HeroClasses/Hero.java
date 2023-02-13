@@ -2,23 +2,21 @@ package HeroClasses;
 
 import HeroClasses.HeroAttribute;
 
-import java.util.Dictionary;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public abstract class Hero {
     String name;
     int level;
     HeroAttribute levelAttributes;
     Map<Slot, Item> equipment = new HashMap<Slot, Item>();
-    List<String> validWeaponTypes;
-    List<String> validArmorTypes;
+    List<WeaponType> validWeaponTypes;
+    List<ArmorType> validArmorTypes;
 
 public Hero(String name) {
     this.name = name;
     this.level = 1;
-
+    validWeaponTypes = new ArrayList<WeaponType>();
+    validArmorTypes = new ArrayList<ArmorType>();
 }
 public abstract void levelUp();
 
@@ -36,6 +34,7 @@ public abstract void levelUp();
 public void Equip(Item item) {
         if (item.ValidEquip(this)) {
             equipment.put(item.slot, item);
+            System.out.println(item.name);
 
         }
 

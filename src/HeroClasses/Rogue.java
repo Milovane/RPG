@@ -2,18 +2,13 @@ package HeroClasses;
 
 
 public class Rogue extends Hero {
-    WeaponType[] validWeaponType;
-    ArmorType[] validArmorType;
-
     public Rogue (String name) {
         super(name);
         this.levelAttributes = new HeroAttribute(2, 6, 1);
-        validWeaponType = new WeaponType[] {
-                WeaponType.Daggers, WeaponType.Swords
-    };
-        validArmorType = new ArmorType[] {
-                ArmorType.Leather, ArmorType.Mail
-        };
+        validWeaponTypes.add(WeaponType.Daggers);
+        validWeaponTypes.add(WeaponType.Swords);
+        validArmorTypes.add(ArmorType.Leather);
+        validArmorTypes.add(ArmorType.Mail);
     }
     @Override
     public void levelUp() {

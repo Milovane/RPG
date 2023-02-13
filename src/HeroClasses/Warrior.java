@@ -2,18 +2,14 @@ package HeroClasses;
 
 
 public class Warrior extends Hero {
-
-    WeaponType[] validWeaponType;
-    ArmorType[] validArmorType;
     public Warrior (String name) {
         super(name);
         this.levelAttributes = new HeroAttribute(5, 2, 1);
-        validWeaponType = new WeaponType[] {
-                WeaponType.Axes, WeaponType.Swords, WeaponType.Hammers
-        };
-        validArmorType = new ArmorType[] {
-                ArmorType.Plate, ArmorType.Mail
-        };
+        validWeaponTypes.add(WeaponType.Axes);
+        validWeaponTypes.add(WeaponType.Swords);
+        validWeaponTypes.add(WeaponType.Hammers);
+        validArmorTypes.add(ArmorType.Plate);
+        validArmorTypes.add(ArmorType.Mail);
 
     }
     @Override
