@@ -22,6 +22,6 @@ public abstract class Item {
     }
 
 
-    public abstract boolean ValidEquip(Hero hero);
+    public abstract boolean ValidEquip(Hero hero) throws Exception;
 
 }

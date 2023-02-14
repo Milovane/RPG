@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MageTest {
 
-
     @Test
     void mageSetName_validName_shouldGiveMageName() throws Exception {
         String expected = "Yasir";
@@ -31,9 +30,19 @@ class MageTest {
 
     }
 
+    @Test
+    void createMage_levelInitialization_mageTooStartWithLevel1() throws Exception {
+        var newMage = new Mage("Yasir");
+
+        assertEquals(1, newMage.level); //Should start with 1
+
+    }
+
+
+
 
     @Test
-    void createMage_statInitializaion_mageTooStartWithCorrectAttributes() throws Exception {
+    void createMage_statInitialization_mageTooStartWithCorrectAttributes() throws Exception {
         var newMage = new Mage("Yasir");
 
         assertEquals(1, newMage.levelAttributes.Strength); //Should start with 1
@@ -46,7 +55,7 @@ class MageTest {
     @Test
     void mageLevelUp_attributeUpgrade_attributesToUpgradeForMage() throws Exception {
 
-        var leveledUpMage = new Mage("Peyman");
+        var leveledUpMage = new Mage("Yasir");
         leveledUpMage.levelUp();
 
         assertEquals(2, leveledUpMage.levelAttributes.Strength); //Should increase by 1
@@ -57,7 +66,7 @@ class MageTest {
 
     @Test
     void mageLevelUp_levelIncreased_levelToBeIncreasedBy1() throws Exception {
-        var leveledUpMage = new Mage("Peyman");
+        var leveledUpMage = new Mage("Yasir");
         leveledUpMage.levelUp();
 
         assertEquals(2, leveledUpMage.level);
@@ -65,12 +74,70 @@ class MageTest {
     }
 
     @Test
-    void mageEquip_validEquip_itemToBeEquipped() {
-        var newMage = new Mage("Yasir");
+    void mageEquip_validWeaponEquip_itemToBeEquipped() throws Exception {
+        var newMage = new Mage("Peyman");
+        var weapon = new Weapon("Glock19", 1, WeaponType.Staffs, 4);
 
+        newMage.Equip(weapon);
+
+        assertEquals(weapon, newMage.equipment.get(Slot.Weapon));
+    }
+
+
+    @Test
+    void mageEquip_invalidWeaponType_ExceptionToBeThrown() throws Exception {
+        var newMage = new Mage("Peyman");
+        var weapon = new Weapon("Glock19", 1, WeaponType.Swords, 4);
+
+        assertThrows(InvalidWeaponException.class, () -> newMage.Equip(weapon));
+    }
+
+    @Test
+    void mageEquip_invalidWeaponLevel_ExceptionToBeThrown() throws Exception {
+        var newMage = new Mage("Peyman");
+        var weapon = new Weapon("Glock19", 5, WeaponType.Staffs, 4);
+
+        assertThrows(InvalidWeaponException.class, () -> newMage.Equip(weapon));
+    }
+
+    @Test
+    void mageEquip_validArmorEquip_itemToBeEquipped() throws Exception {
+        var newMage = new Mage("Peyman");
+        var armor = new Armor( "Cloth Helmet",1, Slot.Head, ArmorType.Cloth,
+                new HeroAttribute(3, 4, 5) );
+
+        newMage.Equip(armor);
+
+        assertEquals(armor, newMage.equipment.get(Slot.Head));
+    }
+
+    @Test
+    void mageEquip_invalidArmorType_ExceptionToBeThrown() throws Exception {
+        var newMage = new Mage("Peyman");
+        var armor = new Armor( "Cloth Helmet",1, Slot.Head, ArmorType.Plate,
+                new HeroAttribute(3, 4, 5) );
+
+        assertThrows(InvalidArmorException.class, () -> newMage.Equip(armor));
+    }
+
+    @Test
+    void mageEquip_invalidArmorLevel_ExceptionToBeThrown() throws Exception {
+        var newMage = new Mage("Peyman");
+        var armor = new Armor( "Cloth Helmet",2, Slot.Head, ArmorType.Cloth,
+                new HeroAttribute(3, 4, 5) );
+
+        assertThrows(InvalidArmorException.class, () -> newMage.Equip(armor));
+    }
+
+    @Test
+    void mageEquip_createArmourForWeaponSlot_ExceptionToBeThrown() throws Exception {
+        var newMage = new Mage("Peyman");
+
+        assertThrows(InvalidArmorException.class, () -> new Armor( "Cloth Helmet",1, Slot.Weapon,
+                ArmorType.Cloth, new HeroAttribute(0, 0, 0)));
 
     }
 
-            //Need test for weapon and armor exceptions
+
 
 }
