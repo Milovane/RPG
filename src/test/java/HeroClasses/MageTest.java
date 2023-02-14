@@ -39,8 +39,6 @@ class MageTest {
     }
 
 
-
-
     @Test
     void createMage_statInitialization_mageTooStartWithCorrectAttributes() throws Exception {
         var newMage = new Mage("Yasir");
@@ -48,7 +46,6 @@ class MageTest {
         assertEquals(1, newMage.levelAttributes.Strength); //Should start with 1
         assertEquals(1, newMage.levelAttributes.Dexterity); //Should start with 1
         assertEquals(8, newMage.levelAttributes.Intelligence); //Should start with 8
-
 
     }
 
@@ -131,7 +128,6 @@ class MageTest {
 
     @Test
     void mageEquip_createArmourForWeaponSlot_ExceptionToBeThrown() throws Exception {
-        var newMage = new Mage("Peyman");
 
         assertThrows(InvalidArmorException.class, () -> new Armor( "Cloth Helmet",1, Slot.Weapon,
                 ArmorType.Cloth, new HeroAttribute(0, 0, 0)));
