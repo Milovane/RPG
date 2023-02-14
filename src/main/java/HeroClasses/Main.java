@@ -1,8 +1,9 @@
 package HeroClasses;
 
 public class Main {
-    public static void main(String[] args) {
-       var Yasir = new Mage("Yasirasdsa") ;
+    public static void main(String[] args) throws Exception {
+      try {
+          var Yasir = new Mage("") ;
         System.out.println(Yasir);
         Yasir.levelUp();
         System.out.println(Yasir);
@@ -14,7 +15,10 @@ public class Main {
 
         System.out.println(Yasir.name);
 
-
+      }
+      catch(Exception error) {
+          System.out.println(error.getMessage());
+        }
     }
 
     }

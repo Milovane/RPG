@@ -14,6 +14,7 @@ public class Weapon extends Item {
         if (hero.validWeaponTypes.contains(weaponType) && hero.level >= requiredLevel)
             return true;
 
-            return false;
+            throw new Exception();
+
     }
 }

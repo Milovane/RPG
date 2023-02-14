@@ -2,7 +2,7 @@ package HeroClasses;
 
 
 public class Warrior extends Hero {
-    public Warrior (String name) {
+    public Warrior (String name) throws Exception {
         super(name);
         this.levelAttributes = new HeroAttribute(5, 2, 1);
         validWeaponTypes.add(WeaponType.Axes);

@@ -12,7 +12,10 @@ public abstract class Hero {
     List<WeaponType> validWeaponTypes;
     List<ArmorType> validArmorTypes;
 
-public Hero(String name) {
+public Hero(String name) throws Exception {
+    if (name.length()==0) {
+        throw new Exception("Name too short");
+    }
     this.name = name;
     this.level = 1;
     validWeaponTypes = new ArrayList<WeaponType>();

@@ -2,7 +2,7 @@ package HeroClasses;
 
 
 public class Rogue extends Hero {
-    public Rogue (String name) {
+    public Rogue (String name) throws Exception {
         super(name);
         this.levelAttributes = new HeroAttribute(2, 6, 1);
         validWeaponTypes.add(WeaponType.Daggers);

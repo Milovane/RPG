@@ -4,7 +4,7 @@ package HeroClasses;
 import java.util.List;
 
 public class Mage extends Hero {
-    public Mage(String name) {
+    public Mage(String name) throws Exception {
         super(name);
         this.levelAttributes = new HeroAttribute(1, 1, 8);
         validWeaponTypes.add(WeaponType.Staffs);
