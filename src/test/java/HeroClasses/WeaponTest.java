@@ -23,11 +23,28 @@ class WeaponTest {
     }
 
     @Test
-    void weaponSetSlot_validName_shouldGiveWeaponName() {
-        int expected = 3;
+    void weaponSetSlot_correctSlot_shouldSetCorrectSlot() {
+        Slot expected = Slot.Weapon;
         var weapon = new Weapon("Sword", 3, WeaponType.Swords, 1);
 
-        assertEquals(expected, weapon.requiredLevel);
+        assertEquals(expected, weapon.slot);
+    }
+
+
+    @Test
+    void weaponSetType_correctType_shouldSetCorrectType() {
+        WeaponType expected = WeaponType.Swords;
+        var weapon = new Weapon("Sword", 3, WeaponType.Swords, 1);
+
+        assertEquals(expected, weapon.weaponType);
+    }
+
+    @Test
+    void weaponSetDamage_correctDamage_shouldSetDamage() {
+        int expected = 5;
+        var weapon = new Weapon("Sword", 3, WeaponType.Swords, 5);
+
+        assertEquals(expected, weapon.weaponDamage);
     }
 
 
