@@ -3,14 +3,12 @@ package HeroClasses;
 
 public class Weapon extends Item {
     WeaponType weaponType;
-    int weaponDamage;
-    public Weapon(String name, int requiredLevel, WeaponType weaponType, int weaponDamage) {
+    double weaponDamage;
+    public Weapon(String name, int requiredLevel, WeaponType weaponType, double weaponDamage) {
         super(name, requiredLevel, Slot.Weapon);
         this.weaponType = weaponType;
         this.weaponDamage = weaponDamage;
     }
-
-
 
     @Override
     public boolean ValidEquip(Hero hero) throws Exception {

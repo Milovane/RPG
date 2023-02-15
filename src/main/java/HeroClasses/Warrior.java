@@ -14,14 +14,20 @@ public class Warrior extends Hero {
 
     }
     @Override
-    public int totalDamage() {
-        int damagingAttribute = totalAttributes().Strength;
+    public double totalDamage() {
+        double damagingAttribute = totalAttributes().Strength;
         var weapon = (Weapon)equipment.get(Slot.Weapon);
-        int weaponDamage = 1;
+        double weaponDamage = 1;
         if (weapon != null)
             weaponDamage = weapon.weaponDamage;
 
-        return weaponDamage * (1 + damagingAttribute / 100);
+
+        double damage = weaponDamage * (1 + damagingAttribute / 100);
+        //Math.round is used to remove decimals since the result would otherwise be "0.000000000003"
+        double result = Math.round(damage * 100.0) / 100.0;
+
+
+        return result;
     }
 
     @Override

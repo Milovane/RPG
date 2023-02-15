@@ -38,23 +38,8 @@ public HeroAttribute totalAttributes() {
     return totalStats;
     }
 
-    public abstract int totalDamage();
+    public abstract double totalDamage();
 
-
-
-
-
-
-    @Override
-    public String toString() {
-        return "HeroClasses.Hero{" +
-                "name='" + name + '\'' +
-                ", level=" + level +
-                ", levelAttributes=" + levelAttributes +
-                ", validWeaponTypes=" + validWeaponTypes +
-                ", validArmorTypes=" + validArmorTypes +
-                '}';
-    }
 
 public void Equip(Item item) throws Exception {
         if (item.ValidEquip(this)) {
@@ -63,10 +48,10 @@ public void Equip(Item item) throws Exception {
 }
 
 public String HeroDisplay() {
+
     String heroState = "Name: " + name + "\n" + "Hero class: " + heroClass + "\n" + "Level: " + level + "\n" +
            "Strength: " + totalAttributes().Strength + "\n" + "Dexterity: " + totalAttributes().Dexterity + "\n" +
             "Intelligence: " + totalAttributes().Intelligence + "\n" + "Hero damage: " + totalDamage();
-
 
     return heroState;
 }

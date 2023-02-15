@@ -139,19 +139,110 @@ class MageTest {
 
     @Test
     void mageTotalAttributes_onePieceOfArmour_totalAttributesToBeAdded() throws Exception {
-        HeroAttribute expected = new HeroAttribute(4, 4, 11);
         var newMage = new Mage("Yasir");
-        var armor = new Armor( "Cloth Helmet",1, Slot.Head, ArmorType.Plate,
+        var armor = new Armor( "Cloth Helmet",1, Slot.Head, ArmorType.Cloth,
                     new HeroAttribute(3, 3, 3) );
+        newMage.Equip(armor);
 
-
-
-
-
-        assertTrue(4 == newMage.totalAttributes().Strength && 1 == newMage.totalAttributes().Dexterity &&
-                8 == newMage.totalAttributes().Intelligence);
-
+        assertTrue(4 == newMage.totalAttributes().Strength && 4 == newMage.totalAttributes().Dexterity &&
+                11 == newMage.totalAttributes().Intelligence);
     }
+
+    @Test
+    void mageTotalAttributes_twoPiecesOfArmour_totalAttributesToBeAdded() throws Exception {
+        var newMage = new Mage("Yasir");
+        var armor1 = new Armor( "Cloth Helmet",1, Slot.Head, ArmorType.Cloth,
+                new HeroAttribute(3, 3, 3) );
+        var armor2 = new Armor( "Cloth shirt",1, Slot.Body, ArmorType.Cloth,
+                new HeroAttribute(3, 3, 3) );
+        newMage.Equip(armor1);
+        newMage.Equip(armor2);
+
+        assertTrue(7 == newMage.totalAttributes().Strength && 7 == newMage.totalAttributes().Dexterity &&
+                14 == newMage.totalAttributes().Intelligence);
+    }
+
+    @Test
+    void mageTotalAttributes_replacePieceOfArmour_totalAttributesToBeAdded() throws Exception {
+        var newMage = new Mage("Yasir");
+        var armor1 = new Armor( "Cloth Helmet",1, Slot.Head, ArmorType.Cloth,
+                new HeroAttribute(3, 3, 3) );
+        var armor2 = new Armor( "Cloth Helmet",1, Slot.Head, ArmorType.Cloth,
+                new HeroAttribute(3, 3, 3) );
+        newMage.Equip(armor1);
+        newMage.Equip(armor2);
+
+        assertTrue(4 == newMage.totalAttributes().Strength && 4 == newMage.totalAttributes().Dexterity &&
+                11 == newMage.totalAttributes().Intelligence);
+    }
+
+    @Test
+    void mageDamage_damageWithoutWeapon_totalDamageToBeAdded() throws Exception {
+        var newMage = new Mage("Yasir");
+
+        assertTrue(1.08 == newMage.totalDamage());
+    }
+
+    @Test
+    void mageDamage_damageWithWeapon_totalDamageToBeCorrect() throws Exception {
+        var newMage = new Mage("Yasir");
+        var weapon = new Weapon("Staff", 1, WeaponType.Staffs, 3);
+
+        newMage.Equip(weapon);
+
+        assertTrue(3.24 == newMage.totalDamage());
+    }
+
+    @Test
+    void mageDamage_equipNewWeapon_totalDamageBeUnaltered() throws Exception {
+        var newMage = new Mage("Yasir");
+        var weapon1 = new Weapon("Staff", 1, WeaponType.Staffs, 3);
+        var weapon2 = new Weapon("Wand", 1, WeaponType.Wands, 3);
+
+        newMage.Equip(weapon1);
+        newMage.Equip(weapon2);
+
+        assertTrue(3.24 == newMage.totalDamage());
+    }
+
+    @Test
+    void mageDamage_equipWeaponAndArmour_totalDamageToBeCorrect() throws Exception {
+        //Expected is: 3 * (1 + (11/100)) = 3.33
+        var newMage = new Mage("Yasir");
+        var weapon = new Weapon("Staff", 1, WeaponType.Staffs, 3);
+        var armor = new Armor( "Cloth Helmet",1, Slot.Head, ArmorType.Cloth,
+                new HeroAttribute(3, 3, 3) );
+
+        newMage.Equip(weapon);
+        newMage.Equip(armor);
+
+        assertTrue(3.33 == newMage.totalDamage());
+    }
+
+    @Test
+    void mageDisplay_mageHeroDisplay_displayAllStats() throws Exception {
+        String expected = "Name: " + "Yasir" + "\n" + "Hero class: " + "Mage" + "\n" + "Level: " + "1" + "\n" +
+                "Strength: " + "1" + "\n" + "Dexterity: " + "1" + "\n" +
+                "Intelligence: " + "8" + "\n" + "Hero damage: " + "1.08";
+        var newMage = new Mage("Yasir");
+
+        assertEquals(expected, newMage.HeroDisplay());
+    }
+
+    @Test
+    void mageDisplay_mageHeroDisplayWithArmour_displayAllStats() throws Exception {
+        String expected = "Name: " + "Yasir" + "\n" + "Hero class: " + "Mage" + "\n" + "Level: " + "1" + "\n" +
+                "Strength: " + "4" + "\n" + "Dexterity: " + "4" + "\n" +
+                "Intelligence: " + "11" + "\n" + "Hero damage: " + "1.11";
+        var newMage = new Mage("Yasir");
+        var armor = new Armor( "Cloth Helmet",1, Slot.Head, ArmorType.Cloth,
+                new HeroAttribute(3, 3, 3) );
+
+        newMage.Equip(armor);
+
+        assertEquals(expected, newMage.HeroDisplay());
+    }
+
 
 
 }

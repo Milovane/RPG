@@ -3,14 +3,6 @@ package HeroClasses;
 public class Armor extends Item {
     ArmorType armorType;
 
-    @Override
-    public String toString() {
-        return "Armor{" +
-                "armorType=" + armorType +
-                ", ArmorAttribute=" + ArmorAttribute +
-                '}';
-    }
-
     HeroAttribute ArmorAttribute;
     public Armor(String name, int requiredLevel, Slot slot, ArmorType armorType, HeroAttribute ArmorAttribute) throws Exception {
         super(name, requiredLevel, slot);

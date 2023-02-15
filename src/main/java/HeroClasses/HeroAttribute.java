@@ -9,7 +9,6 @@ public class HeroAttribute {
     public int getStrength() {
         return Strength;
     }
-
     public void setStrength(int strength) {
         Strength = strength;
     }
@@ -17,7 +16,6 @@ public class HeroAttribute {
     public int getDexterity() {
         return Dexterity;
     }
-
     public void setDexterity(int dexterity) {
         Dexterity = dexterity;
     }
@@ -25,7 +23,6 @@ public class HeroAttribute {
     public int getIntelligence() {
         return Intelligence;
     }
-
     public void setIntelligence(int intelligence) {
         Intelligence = intelligence;
     }
@@ -34,19 +31,5 @@ public class HeroAttribute {
         Strength = strength;
         Dexterity = dexterity;
         Intelligence = intelligence;
-    }
-
-    public void add() {
-
-
-    }
-
-    @Override
-    public String toString() {
-        return "HeroClasses.HeroAttribute{" +
-                "Strength=" + Strength +
-                ", Dexterity=" + Dexterity +
-                ", Intelligence=" + Intelligence +
-                '}';
     }
 }
