@@ -10,7 +10,7 @@ The different weapons and the hero class that can use it are:
 
 |WeaponType|Hero|
 |----|-----:|
-|Axes||Warrior|
+|Axes||Warrior||
 |Bows||Ranger|
 |Daggers||Rogues|
 |Hammers||Warrior|
