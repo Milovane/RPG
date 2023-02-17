@@ -5,6 +5,7 @@ The project features basic functionality for a RPG such as diablo. The user can 
 
 ### Hero ###
 The method called to create a hero is: var newMage = new mage("Name"); The different classes that can be chosen when creating a hero is: 
+
 • Mage
 
 • Warrior 
