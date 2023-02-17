@@ -6,10 +6,13 @@ The project features basic functionality for a RPG such as diablo. The user can 
 ### Hero ###
 The method called to create a hero is: var newMage = new mage("Name"); The different classes that can be chosen when creating a hero is:
 
+
 ⋅⋅*Mage.
 *Warrior.
 *Rogue.
 *Ranger.
+
+
 
 When creating a hero, the level is set to 1 and the hero attributes is set to whatever the specific hero class starts with. 
 To level the hero up you can call the method "Name".levelup();. This will increase the hero attributes with whatever the specific heros attributes improve with on leveling up. 
