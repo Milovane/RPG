@@ -10,8 +10,12 @@ public class Rogue extends Hero {
         validWeaponTypes.add(WeaponType.Swords);
         validArmorTypes.add(ArmorType.Leather);
         validArmorTypes.add(ArmorType.Mail);
+        //These are the types of weapons and armor that a rogue is allowed to wear (based on enums)
+
     }
 
+    //Method to calculate totaldamage.
+    // Math.round is used to remove decimals since the result would otherwise be "0.000000000003"
     @Override
     public double totalDamage() {
         double damagingAttribute = totalAttributes().Dexterity;
@@ -21,7 +25,6 @@ public class Rogue extends Hero {
             weaponDamage = weapon.weaponDamage;
 
         double damage = weaponDamage * (1 + damagingAttribute / 100);
-        //Math.round is used to remove decimals since the result would otherwise be "0.000000000003"
         double result = Math.round(damage * 100.0) / 100.0;
 
 

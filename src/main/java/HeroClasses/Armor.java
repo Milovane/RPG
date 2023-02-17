@@ -2,8 +2,10 @@ package HeroClasses;
 
 public class Armor extends Item {
     ArmorType armorType;
-
     HeroAttribute ArmorAttribute;
+
+    //Method used to create an item which is an armor. When creating an armor a slot needs to be designated.
+    //If the slot is weapon, an exception is thrown.
     public Armor(String name, int requiredLevel, Slot slot, ArmorType armorType, HeroAttribute ArmorAttribute) throws Exception {
         super(name, requiredLevel, slot);
         if (slot == Slot.Weapon)  {
@@ -13,6 +15,8 @@ public class Armor extends Item {
         this.ArmorAttribute = ArmorAttribute;
     }
 
+    //Method called when the equip method is used for an armor. Checks if the Hero has the required level and
+    //if the hero can wear the selected armor type.
     @Override
     public boolean ValidEquip(Hero hero) throws Exception {
 

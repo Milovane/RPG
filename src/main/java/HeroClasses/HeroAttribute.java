@@ -1,5 +1,7 @@
 package HeroClasses;
 
+//The class of hero attributes is used everytime we need to create an object that is dependenent on different attributes.
+//These are: strength, dexterity and intelligence
 public class HeroAttribute {
     int Strength;
     int Dexterity;
