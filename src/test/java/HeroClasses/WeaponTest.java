@@ -30,7 +30,6 @@ class WeaponTest {
         assertEquals(expected, weapon.slot);
     }
 
-
     @Test
     void weaponSetType_correctType_shouldSetCorrectType() {
         WeaponType expected = WeaponType.Swords;

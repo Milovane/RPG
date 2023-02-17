@@ -75,7 +75,7 @@ class RangerTest {
     @Test
     void rangerEquip_validWeaponEquip_itemToBeEquipped() throws Exception {
         var newRanger = new Ranger("Peyman");
-        var weapon = new Weapon("Glock19", 1, WeaponType.Bows, 4);
+        var weapon = new Weapon("Weapon", 1, WeaponType.Bows, 4);
 
         newRanger.Equip(weapon);
 
@@ -86,7 +86,7 @@ class RangerTest {
     @Test
     void rangerEquip_invalidWeaponType_ExceptionToBeThrown() throws Exception {
         var newRanger = new Ranger("Peyman");
-        var weapon = new Weapon("Glock19", 1, WeaponType.Swords, 4);
+        var weapon = new Weapon("Weapon", 1, WeaponType.Swords, 4);
 
         assertThrows(InvalidWeaponException.class, () -> newRanger.Equip(weapon));
     }
@@ -94,7 +94,7 @@ class RangerTest {
     @Test
     void rangerEquip_invalidWeaponLevel_ExceptionToBeThrown() throws Exception {
         var newRanger = new Ranger("Peyman");
-        var weapon = new Weapon("Glock19", 5, WeaponType.Bows, 4);
+        var weapon = new Weapon("Weapon", 5, WeaponType.Bows, 4);
 
         assertThrows(InvalidWeaponException.class, () -> newRanger.Equip(weapon));
     }

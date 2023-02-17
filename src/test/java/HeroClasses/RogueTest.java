@@ -75,7 +75,7 @@ class RogueTest {
     @Test
     void rogueEquip_validWeaponEquip_itemToBeEquipped() throws Exception {
         var newRogue = new Rogue("Sean");
-        var weapon = new Weapon("Glock19", 1, WeaponType.Swords, 4);
+        var weapon = new Weapon("Weapon", 1, WeaponType.Swords, 4);
 
         newRogue.Equip(weapon);
 
@@ -86,7 +86,7 @@ class RogueTest {
     @Test
     void rogueEquip_invalidWeaponType_ExceptionToBeThrown() throws Exception {
         var newRogue = new Rogue("Sean");
-        var weapon = new Weapon("Glock19", 1, WeaponType.Staffs, 4);
+        var weapon = new Weapon("Weapon", 1, WeaponType.Staffs, 4);
 
         assertThrows(InvalidWeaponException.class, () -> newRogue.Equip(weapon));
     }
@@ -94,7 +94,7 @@ class RogueTest {
     @Test
     void rogueEquip_invalidWeaponLevel_ExceptionToBeThrown() throws Exception {
         var newRogue = new Rogue("Sean");
-        var weapon = new Weapon("Glock19", 5, WeaponType.Swords, 4);
+        var weapon = new Weapon("Weapon", 5, WeaponType.Swords, 4);
 
         assertThrows(InvalidWeaponException.class, () -> newRogue.Equip(weapon));
     }

@@ -75,7 +75,7 @@ class WarriorTest {
     @Test
     void warriorEquip_validWeaponEquip_itemToBeEquipped() throws Exception {
         var newWarrior = new Warrior("Warren");
-        var weapon = new Weapon("Glock19", 1, WeaponType.Swords, 4);
+        var weapon = new Weapon("Weapon", 1, WeaponType.Swords, 4);
 
         newWarrior.Equip(weapon);
 
@@ -86,7 +86,7 @@ class WarriorTest {
     @Test
     void warriorEquip_invalidWeaponType_ExceptionToBeThrown() throws Exception {
         var newWarrior = new Warrior("Warren");
-        var weapon = new Weapon("Glock19", 1, WeaponType.Staffs, 4);
+        var weapon = new Weapon("Weapon", 1, WeaponType.Staffs, 4);
 
         assertThrows(InvalidWeaponException.class, () -> newWarrior.Equip(weapon));
     }
@@ -94,7 +94,7 @@ class WarriorTest {
     @Test
     void warriorEquip_invalidWeaponLevel_ExceptionToBeThrown() throws Exception {
         var newWarrior = new Warrior("Warren");
-        var weapon = new Weapon("Glock19", 5, WeaponType.Swords, 4);
+        var weapon = new Weapon("Weapon", 5, WeaponType.Swords, 4);
 
         assertThrows(InvalidWeaponException.class, () -> newWarrior.Equip(weapon));
     }
