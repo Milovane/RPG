@@ -58,7 +58,7 @@ Damaging attribute is different for each hero class. The hero classes damaging a
 |Dexterity|Ranger, Rogue|
 |Intelligence|Mage|
 
-The last display function that can be called is a method that returns a string with a heros:
+The last display function that can be called is a method that returns a string with information on the hero. The string contains: <br />
 • Name <br />
 • Class<br />
 • Level<br />
