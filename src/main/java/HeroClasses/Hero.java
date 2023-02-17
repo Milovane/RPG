@@ -48,11 +48,9 @@ public void Equip(Item item) throws Exception {
 }
 
 public String HeroDisplay() {
-
     String heroState = "Name: " + name + "\n" + "Hero class: " + heroClass + "\n" + "Level: " + level + "\n" +
            "Strength: " + totalAttributes().Strength + "\n" + "Dexterity: " + totalAttributes().Dexterity + "\n" +
             "Intelligence: " + totalAttributes().Intelligence + "\n" + "Hero damage: " + totalDamage();
-
     return heroState;
 }
 

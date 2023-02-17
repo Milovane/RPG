@@ -1,7 +1,6 @@
 package HeroClasses;
 
 public class HeroAttribute {
-
     int Strength;
     int Dexterity;
     int Intelligence;

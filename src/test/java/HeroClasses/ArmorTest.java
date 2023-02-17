@@ -55,13 +55,10 @@ class ArmorTest {
     }
 
     @Test
-    void createArmour_createArmourForWeaponSlot_ExceptionToBeThrown() throws Exception {
+    void testCreateArmour_createArmourForWeaponSlot_ExceptionToBeThrown() throws Exception {
 
         assertThrows(InvalidArmorException.class, () -> new Armor( "Cloth Helmet",1, Slot.Weapon,
                 ArmorType.Cloth, new HeroAttribute(1, 1, 1)));
 
     }
-
-
-
 }
