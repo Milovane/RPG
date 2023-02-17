@@ -24,3 +24,10 @@ The different weapons and the hero class that can use it are:
 |Swords|Warrior, Rogue|
 |Wand|Mage|
 
+### Armor ###
+|ArmorType|Hero|
+|----|-----|
+|Cloth|Mage|
+|Leather|Ranger, Rogue|
+|Mail|Ranger, Rogue, Warrior|
+|Plate|Warrior|
