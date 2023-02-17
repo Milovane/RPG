@@ -8,13 +8,19 @@ To level the hero up you can call the method "Name".levelup();. This will increa
 The different parameters that are needed are: name, requiredLevel, weapontype and weapon damage). 
 The different weapons and the hero class that can use it are:
 
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+
 |WeaponType|Hero|
-|----|-----:|
-|Axes||Warrior||
-|Bows||Ranger|
-|Daggers||Rogues|
-|Hammers||Warrior|
-|Staffs||Mage|
-|Swords||Warrior, Rogue|
-|Wand||Mage|
+|----|-----|
+|Axes|Warrior|
+|Bows|Ranger|
+|Daggers|Rogues|
+|Hammers|Warrior|
+|Staffs|Mage|
+|Swords|Warrior, Rogue|
+|Wand|Mage|
 
