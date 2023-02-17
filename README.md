@@ -9,7 +9,7 @@ The different parameters that are needed are: name, requiredLevel, weapontype an
 The different weapons and the hero class that can use it are:
 
 |WeaponType|Hero|
-|----|:-----|
+|----|-----:|
 |Axes||Warrior|
 |Bows||Ranger|
 |Daggers||Rogues|
