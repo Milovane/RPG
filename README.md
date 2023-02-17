@@ -1,5 +1,5 @@
 # RPG
-##### Author; Milovan Glisovic #####
+##### Author: Milovan Glisovic #####
 ### Description ###
 This project was made with Java for educational purposes. 
 The project features basic functionality for a RPG such as diablo. The user can call methods to create their own Hero which contains a name, hero class, level, hero attributes (strength, dexterity and intelligence) and the user can also equip armour and a weapon. 
