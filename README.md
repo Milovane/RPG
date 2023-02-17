@@ -4,16 +4,11 @@ This project was made with with Java for educational purposes.
 The project features basic functionality for a RPG such as diablo. The user can call methods to create their own Hero which contains a name, hero class, level, hero attributes (strength, dexterity and intelligence) and the user can also equip armour and a weapon. 
 
 ### Hero ###
-The method called to create a hero is: var newMage = new mage("Name"); The different classes that can be chosen when creating a hero is: 
-
-• Mage
-
-• Warrior 
-
-• Rogue 
-
-• Ranger
-
+The method called to create a hero is: var newMage = new mage("Name"); The different classes that can be chosen when creating a hero is: <br />
+• Mage<br />
+• Warrior <br />
+• Rogue <br />
+• Ranger <br />
 
 When creating a hero, the level is set to 1 and the hero attributes is set to whatever the specific hero class starts with. 
 To level the hero up you can call the method "Name".levelup();. This will increase the hero attributes with whatever the specific heros attributes improve with on leveling up. 
