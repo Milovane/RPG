@@ -1,6 +1,7 @@
 # RPG
- 
-This project was made with with Java for educational purposes. 
+##### Author; Milovan Glisovic #####
+### Description ###
+This project was made with Java for educational purposes. 
 The project features basic functionality for a RPG such as diablo. The user can call methods to create their own Hero which contains a name, hero class, level, hero attributes (strength, dexterity and intelligence) and the user can also equip armour and a weapon. 
 
 ### Hero ###
@@ -31,8 +32,12 @@ The different weapon types and the hero class that can use it are:
 ### Armor ###
 To create a piece of armor the method called is var armor = new Armor("Name", 1, Slot.Head, ArmorType.Cloth, new HeroAttribute(3, 3, 3));
 The different parameters that are needed are: name, requiredLevel, Slot."slot", ArmorType and heroattributes). 
-The different slots in which a hero may equip armor in is: head, body and legs.
-The different armor types and the hero class that can use it are:
+The different slots in which a hero may equip armor in is: <br />
+• Head<br /> 
+• Body<br />  
+• Legs<br />
+
+The different armor types that the hero classes can use are:
 |ArmorType|Hero|
 |----|-----|
 |Cloth|Mage|
@@ -53,13 +58,18 @@ Damaging attribute is different for each hero class. The hero classes damaging a
 |Dexterity|Ranger, Rogue|
 |Intelligence|Mage|
 
-The last display function that can be called is a method that returns a string with a heros Name
-• Class
-• Level
-• Total strength
-• Total dexterity
-• Total intelligence
-• Damage
+The last display function that can be called is a method that returns a string with a heros:
+• Name <br />
+• Class<br />
+• Level<br />
+• Total strength<br />
+• Total dexterity<br />
+• Total intelligence<br />
+• Damage<br />
+
+This method is called with (heroName).HeroDisplay();
+
+
 
 
 
